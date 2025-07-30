@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* #F8F9FA */
+    --foreground: 210 17% 15%; /* #212529 */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 210 17% 15%; /* #212529 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 17% 15%;
+    --primary: 157 90% 33%; /* #08A064 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 210 14% 93%; /* #E9ECEF - usado para botões de voltar, etc */
+    --secondary-foreground: 210 11% 31%; /* #495057 */
+    --muted: 210 16% 93%; /* #F1F3F5 - fundo de input */
+    --muted-foreground: 210 9% 45%; /* #6C757D - texto placeholder */
+    --accent: 210 16% 90%; /* #E9ECEF */
+    --accent-foreground: 210 17% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 15% 88%; /* #DEE2E6 - borda de input */
+    --input: 210 15% 88%; /* #DEE2E6 */
+    --ring: 157 90% 33%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-brand-background text-brand-text-primary;
+    min-height: 100vh;
+  }
+}
+
+/* Estilos para os cards principais das telas */
+.screen-card-container {
+  @apply bg-brand-card rounded-xl shadow-lg;
+}
+
+/* Estilos para os cabeçalhos das telas (onde fica o título e botão voltar) */
+.screen-header {
+  @apply bg-brand-header-bg p-4 sm:p-6 rounded-t-xl flex items-center sticky top-0 z-10;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.screen-content-area {
+  @apply p-4 sm:p-6;
+}
+
+/* Ajustes para inputs e labels para combinar com a imagem */
+.form-input {
+  @apply bg-brand-input-bg border-brand-input-border text-brand-text-primary placeholder:text-brand-text-secondary focus:ring-brand-primary focus:border-brand-primary;
+}
+
+.form-label {
+  @apply text-brand-text-primary font-medium;
+}
+
+.primary-button {
+  @apply bg-brand-primary text-white hover:bg-brand-primary-hover;
+}
+
+.secondary-button { /* Para botões como "Limpar Filtros" ou "Voltar" que não são a ação principal */
+  @apply bg-brand-back-button-bg text-brand-back-button-text hover:bg-gray-300;
+}
+
+.icon-button { /* Para botões de ícone como editar/excluir */
+   @apply border-brand-input-border text-brand-text-secondary hover:bg-brand-input-bg;
+}
+
+.destructive-button-outline {
+  @apply border-red-500 text-red-500 hover:bg-red-500/10;
+}
+
+.edit-button-outline {
+  @apply border-blue-500 text-blue-500 hover:bg-blue-500/10;
+}
+
+.select-trigger-styled {
+  @apply bg-brand-input-bg border-brand-input-border text-brand-text-primary;
+}
+
+.select-content-styled {
+  @apply bg-brand-card border-brand-input-border text-brand-text-primary;
+}

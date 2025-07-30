@@ -1,0 +1,21 @@
+# Ignora dependências instaladas pelo npm. Essas pastas podem ser
+# reconstruídas a partir do package.json, portanto não devem ser
+# versionadas.
+node_modules/
+
+# Diretório de build gerado pelo Vite. Este conteúdo é produzido
+# através do script `npm run build` e não precisa ser commitado.
+dist/
+
+# Arquivos de ambiente que contêm segredos ou credenciais. Devem ser
+# mantidos localmente ou configurados na plataforma de deploy (como
+# Vercel) e nunca enviados para o Git.
+.env*
+
+# Arquivos de cache e logs diversos
+*.log
+cache/
+
+# Sistema operacional / IDE
+.DS_Store
+Thumbs.db

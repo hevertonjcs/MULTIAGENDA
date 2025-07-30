@@ -1,0 +1,13 @@
+{
+  // Diretório de saída do build gerado pelo Vite. O Vercel irá servir
+  // os arquivos estáticos contidos em `dist` após o comando `npm run build`.
+  "outputDirectory": "dist",
+  // Redireciona todas as rotas para `index.html`, garantindo que a SPA
+  // funcione corretamente ao recarregar páginas internas sem retornar 404.
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
