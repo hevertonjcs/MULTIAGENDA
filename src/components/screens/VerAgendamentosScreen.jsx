@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient"; // ajuste conforme sua config
+import { supabase } from "../../lib/supabaseClient";
 import { Card } from "../ui/card";
 
 const formatPhone = (numero) => {
@@ -14,7 +14,6 @@ const openWhatsapp = (numero, dataAgendamento, horaAgendamento) => {
   const telefone = formatPhone(numero);
   const dataFormatada = new Date(dataAgendamento).toLocaleDateString("pt-BR").slice(0, 5);
   const horaFormatada = horaAgendamento.split(":")[0];
-
   const msg = `Olá, Vi aqui no sistema que você possui uma visita agendada conosco para a data ${dataFormatada} e por volta das ${horaFormatada} horas.`;
   const link = `https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`;
   window.open(link, "_blank");
